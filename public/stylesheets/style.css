@@ -1,5 +1,11 @@
+header {
+  background-color: #242424
+}
+
 body {
-  padding: 50px;
+  background-color: #4D4D4D;
+  padding: 0px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
