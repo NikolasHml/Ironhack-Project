@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 
 const MONGO_URI =
   process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/photography2";
+  // mongodb+srv://heimlilian:<password>@cluster0.vc01sel.mongodb.net/?retryWrites=true&w=majority
+mongoose.connect("//heimlilian:Atlas23@cluster0.vc01sel.mongodb.net/?retryWrites=true&w=majority")
 
 mongoose
   .connect(MONGO_URI)
