@@ -6,8 +6,12 @@ router.get("/signup", (req, res, next) => {
     res.render("signup")
 })
 
+router.get("/login", (req, res, next) => {
+    res.render("login")
+})
+
 router.post("/signup", (req, res, next) => {
-    const { username, password } = req.body
+    const { username, email, password } = req.body
 
     User.findOne({username: username})
     .then(userFromDb => {
@@ -19,7 +23,7 @@ router.post("/signup", (req, res, next) => {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
 
-        User.create({username, password: hash })
+        User.create({username, email, password: hash })
         .then(() => {
             res.redirect("/login")
         })
