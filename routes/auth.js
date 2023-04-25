@@ -71,6 +71,21 @@ router.get("/login", (req, res, next) => {
     res.render("uploadFilm")
 })
 
+router.post("/uploadFilm", (req, res, next) => {
+    console.log(req.body)
+    const { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm  } = req.body
+
+    if (brand == undefined || camera == undefined || asa == undefined || format == undefined || blackWhiteOrColor == undefined || filter == undefined) {
+      res.render("uploadFilm", { message: "Please fill out the required fields" })
+      return
+    }
+    Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
+      .then(() => {
+          res.redirect("/home")
+      })
+      .catch(error => next(error))
+})
+
 router.get("/editFilm", isLoggedIn, (req, res, next) => {
     res.render("editFilm")
 })
