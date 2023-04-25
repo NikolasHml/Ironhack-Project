@@ -3,10 +3,6 @@ const { Schema, model } = require("mongoose");
 
 const filmSchema = new Schema(
     {
-        title: {
-            type: String,
-            required: true,
-        },
         brand: {
             type: String,
             required: true 
@@ -24,13 +20,18 @@ const filmSchema = new Schema(
             required: true,
         },
         color: {
-            type: String,
-            required: true
+            type: Boolean,
+            //required: true
+        },
+        blackOrWhite: {
+            type: Boolean,
+            //required: true
         },
         filter: {
             type: String,
             required: true
         },
+        title: String,
         location: String,
         startedFilm: Date,
         endedFilm: Date,
@@ -41,6 +42,6 @@ const filmSchema = new Schema(
     }
 );
 
-const User = model("Film", filmSchema);
+const Film = model("Film", filmSchema);
 
 module.exports = Film;
