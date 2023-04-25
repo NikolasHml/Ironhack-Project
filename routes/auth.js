@@ -67,12 +67,12 @@ router.get("/login", (req, res, next) => {
     res.render("profile")
 })
 
-  router.get("/upload", isLoggedIn, (req, res, next) => {
-    res.render("upload")
+  router.get("/uploadFilm", isLoggedIn, (req, res, next) => {
+    res.render("uploadFilm")
 })
 
-router.get("/edit", isLoggedIn, (req, res, next) => {
-    res.render("edit")
+router.get("/editFilm", isLoggedIn, (req, res, next) => {
+    res.render("editFilm")
 })
 
 router.get("/logout", (req, res, next)=> {
