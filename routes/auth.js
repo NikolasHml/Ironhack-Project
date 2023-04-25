@@ -2,6 +2,7 @@ const router = require("express").Router()
 const User = require("../models/User.model")
 const bcrypt = require("bcryptjs")
 const {isLoggedIn} = require("../middleware/route-guard")
+const Film = require("../models/Film.model")
 
 router.get("/signup", (req, res, next) => {
     res.render("signup")
@@ -75,15 +76,22 @@ router.post("/uploadFilm", (req, res, next) => {
     console.log(req.body)
     const { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm  } = req.body
 
-    if (brand == undefined || camera == undefined || asa == undefined || format == undefined || blackWhiteOrColor == undefined || filter == undefined) {
-      res.render("uploadFilm", { message: "Please fill out the required fields" })
-      return
+    if (title == undefined || brand == undefined || camera == undefined || asa == undefined || format == undefined || blackWhiteOrColor == undefined || filter == undefined) {
+      Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
+        .then(() => {
+          res.render("uploadFilm", { message: "Please fill out the required fields" } )
+        })
+        .then((createdFilm) => {
+        // dann irgwie filmfinden und dann muss ichs updaten oder so
+        })
     }
-    Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
-      .then(() => {
-          res.redirect("/home")
-      })
-      .catch(error => next(error))
+    else {
+      Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
+        .then(() => {
+            res.redirect("/home")
+        })
+        .catch(error => next(error))  
+    }
 })
 
 router.get("/editFilm", isLoggedIn, (req, res, next) => {
