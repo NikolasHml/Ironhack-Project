@@ -1,0 +1,84 @@
+<h1>Upload your new film</h1>
+<form action="/uploadFilm" method="POST">
+
+<br>
+
+<label for="title">title:</label>
+<input type="text" name="title">
+
+<br>
+<br>
+
+<label for="brand">brand:</label>
+<input type="text" name="brand">
+
+<br>
+<br>
+
+<label for="format">format:</label>
+<input type="number" name="format">
+
+<br>
+<br>
+
+<label for="camera">camera:</label>
+<input type="text" name="camera">
+
+<br>
+<br>
+
+<label for="asa">ASA:</label>
+<input type="number" name="asa">
+
+<br>
+<br>
+
+<label for="color">color:</label>
+<input type="checkbox" name="color">
+
+<br>
+<br>
+
+<label for="blackOrWhite">black/white</label>
+<input type="checkbox" name="blackOrWhite">
+
+<br>
+<br>
+
+<label for="filter">filter:</label>
+<input type="text" name="filter">
+
+<br>
+<br>
+
+<label for="location">ASA:</label>
+<input type="text" name="location">
+
+<br>
+<br>
+
+<label for="startedFilm">First photo of this film taken on:</label>
+<input type="date" name="startedFilm">
+
+<br>
+<br>
+
+<label for="endedFilm">Last photo of this film taken on:</label>
+<input type="date" name="endedFilm">
+
+<br>
+<br>
+
+<button type="submit">Upload</button>
+
+<br>
+<br>
+
+</form>
+
+{{#if message}}
+  <h3 class="error">{{message}}</h3>
+{{/if}}
+
+<br><br>
+<button><a href="/home">Back</a></button>
