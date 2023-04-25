@@ -3,31 +3,34 @@ const { Schema, model } = require("mongoose");
 
 const filmSchema = new Schema(
     {
+        title: {
+            type: String,
+            // required: true
+        },
         brand: {
             type: String,
-            required: true 
+            // required: true 
         },
         camera: {
             type: String,
-            required: true,
+            // required: true,
         },
         asa: {
             type: Number,
-            required: true,
+            // required: true,
         },
         format: {
             type: String, 
-            required: true,
+            // required: true,
         },
         blackWhiteOrColor: {
             type: String,
-            required: true
+            // required: true
         },
         filter: {
             type: String,
-            required: true
+            // required: true
         },
-        title: String,
         location: String,
         startedFilm: Date,
         endedFilm: Date,
