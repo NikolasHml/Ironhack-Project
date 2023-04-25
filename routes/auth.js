@@ -41,7 +41,7 @@ router.get("/login", (req, res, next) => {
       .then(userFromDB => {
         if (userFromDB === null) {
           // User not found in database => Show login form
-          res.render("login", { message: "Wrong credentials" })
+          res.render("login", { message: "Wrong username, try again" })
           return
         }
   
