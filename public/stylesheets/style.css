@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 body {
-  height: calc(100vh - 110px);
-  background-color: #4D4D4D;
+  background-color: #E6E6E6;
   padding: 0px;
   margin: 0;
   font: 14px 'IBM Plex Sans', sans-serif;
@@ -15,8 +14,8 @@ body {
 }
 .search {
   align-items: center;
-  background-color: #B3A59B;
-  border: solid 2px #4D4D4D;
+  background-color: #E6E6E6;
+  border: solid 2px #242424;
   height: 30px;
   border-radius: 8%;
   font: 14px 'IBM Plex Sans', sans-serif;
@@ -26,7 +25,7 @@ body {
   background-color: #DBB846;
 }
 button {
-  border: solid 2px #4D4D4D;
+  border: solid 2px #242424;
   height: 30px;
   border-radius: 8%;
   font: 14px 'IBM Plex Sans', sans-serif;
@@ -36,7 +35,7 @@ button {
 header {
   justify-content: space-between;
   display: flex;
-  background-color: #242424;
+  background-color: #656666;
   padding: 5px;
   align-items: center;
   height: 70px;
@@ -50,7 +49,24 @@ a {
 }
 
 footer {
-  
-  background-color: #242424;
-  color: #B3A59B ;
+
+  height: 100px;
+  margin-top: auto;
+  background-color: #656666;
+  color: #E6E6E6 ;
+}
+
+.contaner {
+  height: calc(100vh - 220px);
+}
+
+/*este n umero es para calcular el largo de la pantalla, para que el footer se mantenga pegado abajo.*/
+
+.creditos {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+h3 {
+  text-align: center;
 }
