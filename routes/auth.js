@@ -1,7 +1,6 @@
 const router = require("express").Router()
 const User = require("../models/User.model")
 const bcrypt = require("bcryptjs")
-const Film = require("../models/Film.model")
 const {isLoggedIn} = require("../middleware/route-guard")
 
 router.get("/signup", (req, res, next) => {
@@ -34,7 +33,7 @@ router.get("/login", (req, res, next) => {
     res.render("login")
   })
   
-router.post("/login", (req, res, next) => {
+  router.post("/login", (req, res, next) => {
     const { username, email, password } = req.body
   
     // Find user in database by username
@@ -42,7 +41,7 @@ router.post("/login", (req, res, next) => {
       .then(userFromDB => {
         if (userFromDB === null) {
           // User not found in database => Show login form
-          res.render("login", { message: "Wrong credentials" })
+          res.render("login", { message: "Wrong username, try again" })
           return
         }
   
@@ -60,16 +59,15 @@ router.post("/login", (req, res, next) => {
       })
   })
 
-router.get("/home", (req, res, next) => {
+  router.get("/home", isLoggedIn, (req, res, next) => {
     res.render("home")
 })
 
-
-router.get("/profile", (req, res, next) => {
+  router.get("/profile", isLoggedIn, (req, res, next) => {
     res.render("profile")
 })
 
-router.get("/uploadFilm", (req, res, next) => {
+  router.get("/uploadFilm", isLoggedIn, (req, res, next) => {
     res.render("uploadFilm")
 })
 
@@ -88,17 +86,15 @@ router.post("/uploadFilm", (req, res, next) => {
       .catch(error => next(error))
 })
 
-// router.get("/edit", (req, res, next) => {
-
-// })
-
-  router.get("/profile", isLoggedIn, (req, res, next) => {
-    res.render("profile")
+router.get("/editFilm", isLoggedIn, (req, res, next) => {
+    res.render("editFilm")
 })
 
-    router.get("/logout", (req, res, next)=> {
+router.get("/logout", (req, res, next)=> {
     req.session.destroy()
     res.redirect("/login")
-    })
+})
+
+
 
 module.exports = router
