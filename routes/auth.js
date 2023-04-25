@@ -75,21 +75,17 @@ router.get("/uploadFilm", (req, res, next) => {
 
 router.post("/uploadFilm", (req, res, next) => {
     console.log(req.body)
-    const { title, brand, camera, asa, format, color, blackOrWhite, filter, location, startedFilm, endedFilm  } = req.body
+    const { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm  } = req.body
 
-    if (color == undefined && blackOrWhite == undefined) {
-      res.render("uploadFilm", { message: "Color or black/white, one has to know this yo" })
-      return}
-    // else if (color == true && blackOrWhite == true) {
-    //   res.render("uploadFilm", { message: "Color or black/white, you have to choose" })
-    //   return}
-    else {
-      Film.create( { title, brand, camera, asa, format, color, blackOrWhite, filter, location, startedFilm, endedFilm } )
+    if (brand == undefined || camera == undefined || asa == undefined || format == undefined || blackWhiteOrColor == undefined || filter == undefined) {
+      res.render("uploadFilm", { message: "Please fill out the required fields" })
+      return
+    }
+    Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
       .then(() => {
           res.redirect("/home")
       })
       .catch(error => next(error))
-    }
 })
 
 // router.get("/edit", (req, res, next) => {

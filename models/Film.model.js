@@ -19,13 +19,9 @@ const filmSchema = new Schema(
             type: String, 
             required: true,
         },
-        color: {
-            type: Boolean,
-            //required: true
-        },
-        blackOrWhite: {
-            type: Boolean,
-            //required: true
+        blackWhiteOrColor: {
+            type: String,
+            required: true
         },
         filter: {
             type: String,
