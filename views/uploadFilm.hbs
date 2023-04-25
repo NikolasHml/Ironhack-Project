@@ -1,0 +1,42 @@
+<h1>Upload your new film</h1>
+<form action="/uploadFilm" method="POST">
+
+<label for="title">title:</label>
+<input type="text" name="title">
+
+<label for="brand">brand:</label>
+<input type="text" name="brand">
+
+<label for="format">format:</label>
+<input type="number" name="format">mm
+
+<label for="camera">camera:</label>
+<input type="text" name="camera">
+
+<label for="asa">ASA:</label>
+<input type="number" name="asa">
+
+<label for="color">color:</label>
+<input type="checkbox" name="color">
+<label for="blackOrWhite">black/white</label>
+<input type="checkbox" name="blackOrWhite">
+
+<label for="filter">filter:</label>
+<input type="text" name="filter">
+
+<label for="location">ASA:</label>
+<input type="text" name="location">
+
+<label for="startedFilm">First photo of this film taken on:</label>
+<input type="date" name="startedFilm">
+
+<label for="endedFilm">Last photo of this film taken on:</label>
+<input type="date" name="endedFilm">
+
+<button type="submit">Upload</button>
+
+</form>
+
+{{#if message}}
+  <h3 class="error">{{message}}</h3>
+{{/if}}
