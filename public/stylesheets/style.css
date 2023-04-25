@@ -1,18 +1,56 @@
-header {
-  background-color: #242424
-}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 body {
+  height: calc(100vh - 110px);
   background-color: #4D4D4D;
   padding: 0px;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'IBM Plex Sans', sans-serif;
+}
+
+.Logo {
+  padding-top: 80px;
+  height: 150px;
+  position: relative;
+}
+.search {
+  align-items: center;
+  background-color: #B3A59B;
+  border: solid 2px #4D4D4D;
+  height: 30px;
+  border-radius: 8%;
+  font: 14px 'IBM Plex Sans', sans-serif;
+}
+.login {
+  
+  background-color: #DBB846;
+}
+button {
+  border: solid 2px #4D4D4D;
+  height: 30px;
+  border-radius: 8%;
+  font: 14px 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  
+}
+header {
+  justify-content: space-between;
+  display: flex;
+  background-color: #242424;
+  padding: 5px;
+  align-items: center;
+  height: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 a {
-  color: #00b7ff;
+  color: #242424;
+  text-decoration: none;
 }
 
-h1 {
-  color: 15px;
+footer {
+  
+  background-color: #242424;
+  color: #B3A59B ;
 }
