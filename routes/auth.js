@@ -2,6 +2,7 @@ const router = require("express").Router()
 const User = require("../models/User.model")
 const bcrypt = require("bcryptjs")
 const Film = require("../models/Film.model")
+const {isLoggedIn} = require("../middleware/route-guard")
 
 router.get("/signup", (req, res, next) => {
     res.render("signup")
@@ -63,6 +64,7 @@ router.get("/home", (req, res, next) => {
     res.render("home")
 })
 
+
 router.get("/profile", (req, res, next) => {
     res.render("profile")
 })
@@ -93,5 +95,14 @@ router.post("/uploadFilm", (req, res, next) => {
 // router.get("/edit", (req, res, next) => {
 
 // })
+
+  router.get("/profile", isLoggedIn, (req, res, next) => {
+    res.render("profile")
+})
+
+    router.get("/logout", (req, res, next)=> {
+    req.session.destroy()
+    res.redirect("/login")
+    })
 
 module.exports = router
