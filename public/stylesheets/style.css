@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 body {
-  background-color: #E6E6E6;
-  padding: 7px;
+
+  background-color: #D7E1D1;
+  padding: 0px;
   margin: 0;
   font: 14px 'IBM Plex Sans', sans-serif;
 }
@@ -15,14 +16,16 @@ body {
 
 .search {
   align-items: center;
-  background-color: #E6E6E6;
+  background-color: #D7E1D1;
   border: solid 2px #242424;
   height: 30px;
   border-radius: 8%;
   font: 14px 'IBM Plex Sans', sans-serif;
 }
 .login {
-  background-color: #DBB846;
+  
+  background-color: #E47B6A;
+
 }
 
 button {
@@ -36,7 +39,7 @@ button {
 header {
   justify-content: space-between;
   display: flex;
-  background-color: #656666;
+  background-color: #A59681;
   padding: 5px;
   align-items: center;
   height: 70px;
@@ -52,7 +55,7 @@ a {
 footer {
   height: 100px;
   margin-top: auto;
-  background-color: #656666;
+  background-color: #A59681;
   color: #E6E6E6 ;
 }
 
