@@ -4,7 +4,6 @@ const bcrypt = require("bcryptjs")
 const {isLoggedIn} = require("../middleware/route-guard")
 const Film = require("../models/Film.model")
 // const uploader = require("../config/cloudinary")
-//
 const { uploader, cloudinary } = require("../config/cloudinary")
 
 router.get("/signup", (req, res, next) => {
@@ -110,6 +109,18 @@ router.get("/editFilm", isLoggedIn, (req, res, next) => {
 router.get("/logout", (req, res, next)=> {
     req.session.destroy()
     res.redirect("/login")
+})
+
+router.get("/home/:filmId", (req, res, next) => {
+  const { filmId } = req.params
+  console.log(req.params)
+
+  Film.findById(filmId)
+    .then(theFilm => res.render("film-details.hbs", { film: theFilm}))
+    .catch(error => {
+      console.log("Error while retrieving film details:", error)
+      next(error)
+    })
 })
 
 
