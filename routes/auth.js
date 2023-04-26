@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs")
 const {isLoggedIn} = require("../middleware/route-guard")
 const Film = require("../models/Film.model")
 // const uploader = require("../config/cloudinary")
+//
 const { uploader, cloudinary } = require("../config/cloudinary")
 
 router.get("/signup", (req, res, next) => {
