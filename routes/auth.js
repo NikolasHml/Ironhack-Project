@@ -3,6 +3,8 @@ const User = require("../models/User.model")
 const bcrypt = require("bcryptjs")
 const {isLoggedIn} = require("../middleware/route-guard")
 const Film = require("../models/Film.model")
+// const uploader = require("../config/cloudinary")
+const { uploader, cloudinary } = require("../config/cloudinary")
 
 router.get("/signup", (req, res, next) => {
     res.render("signup")
@@ -61,7 +63,14 @@ router.get("/login", (req, res, next) => {
   })
 
   router.get("/home", isLoggedIn, (req, res, next) => {
-    res.render("home")
+    Film.find()
+      .then(allFilms => {
+        res.render("home.hbs", { films: allFilms})
+      })
+      .catch(error => {
+        next(error)
+      })
+    //res.render("home")
 })
 
   router.get("/profile", isLoggedIn, (req, res, next) => {
@@ -72,26 +81,26 @@ router.get("/login", (req, res, next) => {
     res.render("uploadFilm")
 })
 
-router.post("/uploadFilm", (req, res, next) => {
+router.post("/uploadFilm", uploader.single("picture"), (req, res, next) => {
     console.log(req.body)
     const { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm  } = req.body
 
-    if (title == undefined || brand == undefined || camera == undefined || asa == undefined || format == undefined || blackWhiteOrColor == undefined || filter == undefined) {
-      Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
-        .then(() => {
-          res.render("uploadFilm", { message: "Please fill out the required fields" } )
-        })
-        .then((createdFilm) => {
+    // if (title == undefined || brand == undefined || camera == undefined || asa == undefined || format == undefined || blackWhiteOrColor == undefined || filter == undefined) {
+    //   Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
+    //     .then(() => {
+    //       res.render("uploadFilm", { message: "Please fill out the required fields" } )
+    //     })
+        //.then((createdFilm) => {
         // dann irgwie filmfinden und dann muss ichs updaten oder so
-        })
-    }
-    else {
-      Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
+        //})
+    //}
+    //else {
+      Film.create( { imageUrl: req.file.path, title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
         .then(() => {
             res.redirect("/home")
         })
         .catch(error => next(error))  
-    }
+    //}
 })
 
 router.get("/editFilm", isLoggedIn, (req, res, next) => {
