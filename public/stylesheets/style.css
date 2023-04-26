@@ -34,6 +34,7 @@ button {
 }
 
 header {
+  border: 1px solid #242424;
   justify-content: space-between;
   display: flex;
   background-color: #A59681;
@@ -50,6 +51,7 @@ a {
 }
 
 footer {
+  border: 1px solid #242424;
   height: 100px;
   margin-top: auto;
   background-color: #A59681;
@@ -57,17 +59,25 @@ footer {
 }
 
 .container {
-  height: calc(100vh - 220px);
+  padding: 80px;
+  height: calc(100vh - 350px);
 }
 
 /*este n umero es para calcular el largo de la pantalla, para que el footer se mantenga pegado abajo.*/
 
-.creditos {
+.credits {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
 h3 {
+  color: #242424;
   text-align: center;
+  font: 12px 'Comic Sans', sans-serif;
+}
+
+h4 {
+  color: #242424;
+  font: 12px 'Comic Sans', sans-serif;
 }
