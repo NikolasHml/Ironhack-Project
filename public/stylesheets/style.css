@@ -81,3 +81,43 @@ h4 {
   color: #242424;
   font: 12px 'Comic Sans', sans-serif;
 }
+form {
+  justify-content: space-between;
+  padding: 100px;
+}
+
+.login-f {
+  display: flex;
+  flex-direction: column;
+  background-color: #D8D1C1;
+  justify-content: space-between;
+  font: 20px 'comic Sans', sans-serif;
+  border-radius: 10px;
+  padding: 40px;
+  padding-bottom: 10px;
+}
+
+.papi {
+  justify-content: space-between;
+  display: flex;
+}
+
+.login-i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-l {
+  display: flex;
+  flex-direction: end;
+  flex-direction: column;
+}
+
+.login-b {
+  background-color: #E47B6A;
+  width: 100px;
+  margin-left: auto;
+  margin-right: 0px;
+}
