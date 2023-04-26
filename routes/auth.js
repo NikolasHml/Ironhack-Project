@@ -65,7 +65,7 @@ router.get("/login", (req, res, next) => {
 })
 
   router.get("/profile", isLoggedIn, (req, res, next) => {
-    res.render("profile")
+    res.render("profile", {user: req.session.user})
 })
 
   router.get("/uploadFilm", isLoggedIn, (req, res, next) => {

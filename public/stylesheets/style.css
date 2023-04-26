@@ -2,7 +2,7 @@
 
 body {
   background-color: #E6E6E6;
-  padding: 0px;
+  padding: 7px;
   margin: 0;
   font: 14px 'IBM Plex Sans', sans-serif;
 }
@@ -12,6 +12,7 @@ body {
   height: 150px;
   position: relative;
 }
+
 .search {
   align-items: center;
   background-color: #E6E6E6;
@@ -21,13 +22,13 @@ body {
   font: 14px 'IBM Plex Sans', sans-serif;
 }
 .login {
-  
   background-color: #DBB846;
 }
+
 button {
-  border: solid 2px #242424;
+  border: solid 1px #242424;
   height: 30px;
-  border-radius: 8%;
+  border-radius: 2%;
   font: 14px 'IBM Plex Sans', sans-serif;
   font-weight: 500;
   
@@ -49,14 +50,13 @@ a {
 }
 
 footer {
-
   height: 100px;
   margin-top: auto;
   background-color: #656666;
   color: #E6E6E6 ;
 }
 
-.contaner {
+.container {
   height: calc(100vh - 220px);
 }
 
