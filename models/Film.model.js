@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 
 const filmSchema = new Schema(
     {
+        imageUrl: String,
         title: {
             type: String,
             // required: true

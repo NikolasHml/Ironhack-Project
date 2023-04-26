@@ -1,14 +1,24 @@
+<br>
+<br>
+<br>
+<br>
+
 <h1>Home</h1>
 
 <button><a href="/profile">Profile</a></button>
-<button><a href="/uploadFilm">Upload pictures</a></button>
-<button><a href="/editFilm">Edit pictures</a></button>
+<button><a href="/uploadFilm">Upload new film</a></button>
+
 <div></div>
 <br>
+<h1>Your films</h1>
+<br>
 
-{{!-- {{#each films}}
-    <div>{{title}}</div>
-{{/each}} --}}
+{{#each films}}
+    <div><h2>{{title}}</h2></div>
+
+    <button><a href="/home/{{_id}}">See all pictures</a></button>
+    <button><a href="/editFilm">Edit pictures</a></button>
+{{/each}}
 
 
 
