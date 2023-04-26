@@ -48,7 +48,6 @@ router.get("/login", (req, res, next) => {
           res.render("login", { message: "Wrong username, try again" })
           return
         }
-  
         // User found in database
         // Check if password from input form matches hashed password from database
         if (bcrypt.compareSync(password, userFromDB.password)) {
