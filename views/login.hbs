@@ -1,24 +1,28 @@
-    <legend>Log in</legend>
+<div class="login-form">
+    <fieldset class="login-f">
+        <legend>Log in</legend>
         <form action="/login" method="POST">
-        <div class="papi">
-             <div class="login-l">
-                <label for="username">Username:</label>
-                <br>
-                <label for="email">E-Mail:</label>
-                <br>
-                <label for="password">Password:</label>
+            <div class="papi">
+                <div class="login-l">
+                    <label for="username">Username:</label>
+                    <br>
+                    <label for="email">E-Mail:</label>
+                    <br>
+                    <label for="password">Password:</label>
+                </div>
+                <div class="login-i">
+                    <input class="login-in" type="text" name="username" required>
+                    <br>
+                    <input class="login-in" type="text" name="email" required>
+                    <br>
+                    <input class="login-in" type="password" name="password" required>
+                </div>
             </div>
-            <div class="login-i">
-                <input class="login-i" type="text" name="username" required>
-                <br>
-                <input class="login-i" type="text" name="email" required>
-                <br>
-                <input class="login-i" type="password" name="password" required>
-            </div>
-        </div>
-        <br>
-        <button class="login-b" type="submit">Log in</button>
-        </form>
+            <br>
+            <button class="login-b" type="submit">Log in</button>
+        </form>    
+    </fieldset>
+</div>
 <br><br>
-<button><a href="/">Back</a></button>
+<a href="/"><img class="return" src="/images/arrow.png" alt=""></a>
 </div>
