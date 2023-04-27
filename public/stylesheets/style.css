@@ -153,6 +153,7 @@ h4 {
 
 .rightPart {
   padding-bottom: 10px;
+  padding-left: 30px;
   justify-content: left;
 }
 
@@ -162,18 +163,20 @@ h4 {
 }
 
 .photo {
-  width: 50%;
+  width: 50vw;
   height: auto;
 }
 
-  margin-left: 250px;
-  
-}
 .return {
   width: 40px;
   padding: 20px;
   padding-bottom: 40px;
   opacity: 60%;
+}
+
+.profileView {
+  padding-left: 30px;
+  display: flex;
 }
 
 
