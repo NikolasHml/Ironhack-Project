@@ -1,7 +1,4 @@
-<br>
-<br>
-<br>
-<br>
+<br><br>
 
 <h1>Home</h1>
 <div class="home">
@@ -10,20 +7,14 @@
 <button><a href="/uploadFilm">Upload new photo</a></button>
 
 <div></div>
-<br>
-<br>
+<br><br>
 <h2>Your photos</h2>
-<br>
-
-
 
 {{#each films}}
-
-    <div><h2>Name: {{title}}</h2></div>
+    <h2>Name: {{title}}</h2>
     <button><a href="/home/{{_id}}">Details</a></button>
     <button><a href="/editFilm">Edit photo</a></button>
     <br><br>
-
 {{/each}}
 
 <button><a href="/logout">Logout</a></button>
