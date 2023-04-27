@@ -143,9 +143,26 @@ h4 {
 }
 
 .home {
+  display: flex;
   padding-left: 30px;
+  flex-direction: row;
+  
 }
 
+.home-left {
+  border-right: 1px solid #242424;
+  padding-right: 20px;
+}
+.home-right {
+  padding-left: 30px;
+  border-left: 1px solid #242424;
+  
+}
+
+.div-homeright{
+  display: flex;
+  padding: 5px;  
+}
 .photoDetails {
   padding-left: 30px;
   display: flex;
@@ -174,9 +191,15 @@ h4 {
   opacity: 60%;
 }
 
-.profileView {
-  padding-left: 30px;
-  display: flex;
+
+.home-title {
+  padding: 50px;
+  padding-top: 80px;
 }
 
-
+.profile-button {
+  background-color: #E47B6A
+}
+.upload-button {
+  background-color: #e5e5e5;
+}
