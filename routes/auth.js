@@ -80,7 +80,7 @@ router.get("/login", (req, res, next) => {
     res.render("uploadFilm")
 })
 
-router.post("/uploadFilm", uploader.single("picture"), (req, res, next) => {
+router.post("/uploadFilm", isLoggedIn, uploader.single("picture"), (req, res, next) => {
     console.log(req.body)
     const { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm  } = req.body
 
@@ -111,7 +111,7 @@ router.get("/logout", (req, res, next)=> {
     res.redirect("/login")
 })
 
-router.get("/home/:filmId", (req, res, next) => {
+router.get("/home/:filmId", isLoggedIn, (req, res, next) => {
   const { filmId } = req.params
   console.log(req.params)
 
