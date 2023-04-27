@@ -1,12 +1,12 @@
-
-<hr>
-<br>
-<br>
-<br>
+<br><br>
 <h1>{{film.title}}</h1>
-<br>
-<br>
-<br><img src="{{film.imageUrl}}" alt="picture">
+<br><br>
+
+<div class="photoDetails">
+    <div class="leftPart">
+<br><img class="photo" src="{{film.imageUrl}}" alt="picture">
+    </div>
+    <div class="rightPart">
 <p>Brand: {{film.brand}}</p>
 <p>Camera: {{film.camera}}</p>
 <p>ASA: {{film.asa}}</p>
@@ -17,6 +17,7 @@
 <p>startedFilm: {{film.startedFilm}}</p>
 <p>endedFilm: {{film.endedFilm}}</p>
 
-<hr>
 <button><a href="/home">Back</a></button>
 <button><a href="/editFilm">Edit photo</a></button>
+    </div>  
+</div>

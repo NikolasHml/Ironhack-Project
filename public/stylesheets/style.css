@@ -15,10 +15,15 @@ body {
 
 .search {
   align-items: center;
-  background-color: #D7E1D1;
+  background-color: #e5e5e5;
   border: solid 1px #242424;
   height: 30px;
   font: 12px 'Comic Sans', sans-serif;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.go-button {
+  background-color: #D7E1D1;
 }
 
 .login {
@@ -71,6 +76,11 @@ footer {
   text-align: center;
 }
 
+h1 {
+  padding-left: 30px;
+  padding-top: 50px;
+}
+
 h3 {
   color: #242424;
   text-align: center;
@@ -81,16 +91,18 @@ h4 {
   color: #242424;
   font: 12px 'Comic Sans', sans-serif;
 }
-form {
-  justify-content: space-between;
+
+.login-form{
   padding: 100px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .login-f {
-  display: flex;
-  flex-direction: column;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 350px;
   background-color: #D8D1C1;
-  justify-content: space-between;
   font: 20px 'comic Sans', sans-serif;
   border-radius: 10px;
   padding: 40px;
@@ -109,6 +121,11 @@ form {
   align-items: center;
 }
 
+.login-in {
+  border: solid 1px #242424;
+  background-color: #e5e5e5;
+}
+
 .login-l {
   display: flex;
   flex-direction: end;
@@ -116,8 +133,95 @@ form {
 }
 
 .login-b {
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
   background-color: #E47B6A;
   width: 100px;
+  
+
   margin-left: auto;
   margin-right: 0px;
+}
+
+.home {
+  display: flex;
+  padding-left: 30px;
+  flex-direction: row;
+  
+}
+
+.home-left {
+  border-right: 1px solid #242424;
+  padding-right: 15px;
+}
+
+.preview {
+  width: 100px;
+  height: auto;
+  
+}
+
+.home-right {
+  padding-left: 30px;
+  border-left: 1px solid #242424;
+  
+}
+
+.home-papi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.div-homeright{
+  overflow: hidden;
+  background-image: url();
+  background-size: cover;
+  padding: 20px;  
+}
+
+.photoDetails {
+  padding-left: 30px;
+  display: flex;
+}
+
+.rightPart {
+  padding-bottom: 10px;
+  padding-left: 30px;
+  justify-content: left;
+}
+
+.leftPart {
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+.photo {
+  width: 50vw;
+  height: auto;
+}
+
+.return {
+  width: 40px;
+  padding: 20px;
+  padding-bottom: 40px;
+  opacity: 60%;
+}
+
+
+.home-title {
+  padding: 50px;
+  padding-top: 80px;
+}
+
+.profile-button {
+  background-color: #E47B6A;
+  margin-bottom: 20px;  
+}
+.upload-button {
+  background-color: #e5e5e5;
+  min-width: 150px;
+}
+.names-pics {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
 }

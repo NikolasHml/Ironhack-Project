@@ -6,6 +6,8 @@ const Film = require("../models/Film.model")
 // const uploader = require("../config/cloudinary")
 const { uploader, cloudinary } = require("../config/cloudinary")
 
+
+
 router.get("/signup", (req, res, next) => {
     res.render("signup")
 })
@@ -136,7 +138,5 @@ router.get("/home/:filmId", isLoggedIn, (req, res, next) => {
       next(error)
     })
 })
-
-
 
 module.exports = router
