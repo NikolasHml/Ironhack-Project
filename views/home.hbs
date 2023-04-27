@@ -4,6 +4,7 @@
 <br>
 
 <h1>Home</h1>
+<div class="home">
 
 <button><a href="/profile">Profile</a></button>
 <button><a href="/uploadFilm">Upload new photo</a></button>
@@ -11,22 +12,20 @@
 <div></div>
 <br>
 <br>
-<h1>Your photos</h1>
+<h2>Your photos</h2>
 <br>
+
+
 
 {{#each films}}
-    <div><h2>{{title}}</h2></div>
 
-    <button><a href="/home/{{_id}}">See all photos</a></button>
+    <div><h2>Name: {{title}}</h2></div>
+    <button><a href="/home/{{_id}}">Details</a></button>
     <button><a href="/editFilm">Edit photo</a></button>
+    <br><br>
+
 {{/each}}
 
-
-
-
-
-
-
-
-<br>
 <button><a href="/logout">Logout</a></button>
+<br><br>
+</div>

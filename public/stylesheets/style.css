@@ -76,6 +76,11 @@ footer {
   text-align: center;
 }
 
+h1 {
+  padding-left: 30px;
+  padding-top: 50px;
+}
+
 h3 {
   color: #242424;
   text-align: center;
@@ -131,6 +136,36 @@ h4 {
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
   background-color: #E47B6A;
   width: 100px;
+  
+
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.home {
+  padding-left: 30px;
+}
+
+.photoDetails {
+  padding-left: 30px;
+  display: flex;
+}
+
+.rightPart {
+  padding-bottom: 10px;
+  justify-content: left;
+}
+
+.leftPart {
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+.photo {
+  width: 50%;
+  height: auto;
+}
+
   margin-left: 250px;
   
 }
@@ -140,4 +175,5 @@ h4 {
   padding-bottom: 40px;
   opacity: 60%;
 }
+
 
