@@ -1,31 +1,18 @@
-<br>
-<br>
-<br>
-<br>
-
-<h1>Home</h1>
+<h1 class="home-title">Home</h1>
 <div class="home">
-
-<button><a href="/profile">Profile</a></button>
-<button><a href="/uploadFilm">Upload new photo</a></button>
-
-<div></div>
-<br>
-<br>
-<h2>Your photos</h2>
-<br>
-
-
-
-{{#each films}}
-
-    <div><h2>Name: {{title}}</h2></div>
-    <button><a href="/home/{{_id}}">Details</a></button>
-    <button><a href="/editFilm">Edit photo</a></button>
-    <br><br>
-
-{{/each}}
-
-<button><a href="/logout">Logout</a></button>
-<br><br>
+    <div class="home-left">  
+        <button class="profile-button"><a href="/profile">Profile</a></button>
+        <button class="upload-button"><a href="/uploadFilm">Upload new photo</a></button>
+    </div>
+    <div class="home-right">
+        <h2>Your photos</h2>
+        {{#each films}}
+            <div class="div-homeright">
+                <div><h2>Name: {{title}}</h2></div>
+                <button><a href="/home/{{_id}}">Details</a></button>
+                <button><a href="/editFilm">Edit photo</a></button>
+            </div>
+        {{/each}}
+    </div>
 </div>
+<button><a href="/logout">Logout</a></button>
