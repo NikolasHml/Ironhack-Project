@@ -15,10 +15,15 @@ body {
 
 .search {
   align-items: center;
-  background-color: #D7E1D1;
+  background-color: #e5e5e5;
   border: solid 1px #242424;
   height: 30px;
   font: 12px 'Comic Sans', sans-serif;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.go-button {
+  background-color: #D7E1D1;
 }
 
 .login {
@@ -81,16 +86,18 @@ h4 {
   color: #242424;
   font: 12px 'Comic Sans', sans-serif;
 }
-form {
-  justify-content: space-between;
+
+.login-form{
   padding: 100px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .login-f {
-  display: flex;
-  flex-direction: column;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 350px;
   background-color: #D8D1C1;
-  justify-content: space-between;
   font: 20px 'comic Sans', sans-serif;
   border-radius: 10px;
   padding: 40px;
@@ -109,6 +116,11 @@ form {
   align-items: center;
 }
 
+.login-in {
+  border: solid 1px #242424;
+  background-color: #e5e5e5;
+}
+
 .login-l {
   display: flex;
   flex-direction: end;
@@ -116,8 +128,16 @@ form {
 }
 
 .login-b {
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
   background-color: #E47B6A;
   width: 100px;
-  margin-left: auto;
-  margin-right: 0px;
+  margin-left: 250px;
+  
 }
+.return {
+  width: 40px;
+  padding: 20px;
+  padding-bottom: 40px;
+  opacity: 60%;
+}
+
