@@ -170,6 +170,7 @@ h4 {
 
 .rightPart {
   padding-bottom: 10px;
+  padding-left: 30px;
   justify-content: left;
 }
 
@@ -179,7 +180,7 @@ h4 {
 }
 
 .photo {
-  width: 50%;
+  width: 50vw;
   height: auto;
 }
 
@@ -189,6 +190,7 @@ h4 {
   padding-bottom: 40px;
   opacity: 60%;
 }
+
 
 .home-title {
   padding: 50px;
