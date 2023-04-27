@@ -1,6 +1,12 @@
-<h1>Upload your new film</h1>
-<form action="/uploadFilm" method="POST">
+<h1>Upload your new photo</h1>
+<form action="/uploadFilm" method="POST" enctype="multipart/form-data">
 
+<br>
+
+Upload photo:<label for="picture"></label>
+<input type="file" name="picture">
+
+<br>
 <br>
 
 <label for="title">title:</label>
