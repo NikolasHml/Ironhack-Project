@@ -4,6 +4,11 @@ const bcrypt = require("bcryptjs")
 const {isLoggedIn} = require("../middleware/route-guard")
 const Film = require("../models/Film.model")
 
+router.get("/home", isLoggedIn, (req, res, next) => {
+  res.render("home")
+})
+
+
 router.get("/signup", (req, res, next) => {
     res.render("signup")
 })
@@ -60,10 +65,7 @@ router.get("/login", (req, res, next) => {
       })
   })
 
-  router.get("/home", isLoggedIn, (req, res, next) => {
-    res.render("home")
-})
-
+  
   router.get("/profile", isLoggedIn, (req, res, next) => {
     res.render("profile", {user: req.session.user})
 })
