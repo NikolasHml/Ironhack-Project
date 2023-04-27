@@ -6,13 +6,16 @@
     </div>
     <div class="home-right">
         <h2>Your photos</h2>
-        {{#each films}}
-            <div class="div-homeright">
-                <div><h2>Name: {{title}}</h2></div>
-                <button><a href="/home/{{_id}}">Details</a></button>
-                <button><a href="/editFilm">Edit photo</a></button>
-            </div>
-        {{/each}}
+        <div class="home-papi">
+            {{#each films}}
+                <div class="div-homeright">
+                    <img class='preview' src="{{imageUrl}}" alt="">
+                    <div><h5 class="names-pics">{{title}}</h5></div>
+                    <button><a href="/home/{{_id}}">Details</a></button>
+                    <button><a href="/editFilm">Edit photo</a></button>
+                </div>
+            {{/each}}
+        </div>
     </div>
 </div>
 <button><a href="/logout">Logout</a></button>
