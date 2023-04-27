@@ -1,4 +1,94 @@
-<h1>Edit photo</h1>
+
+<h1>Change or add new details to your photo</h1>
+<form action="/home/edit/{{film._id}}" method="POST" enctype="multipart/form-data">
+
+<br>
+<img src="{{film.imageUrl}}" alt="picture">
+<br>
+
+Change photo:<label for="picture"></label>
+<input type="file" name="picture" value="{{film.imageUrl}}">
+
+<br>
+<br>
+
+<label for="title">title:</label>
+<input type="text" name="title" value="{{film.title}}">
+
+<br>
+<br>
+
+<label for="brand">brand:</label>
+<input type="text" name="brand" value="{{film.brand}}">
+
+<br>
+<br>
+
+<label for="format">format:</label>
+<input type="number" name="format" value="{{film.format}}">
+
+<br>
+<br>
+
+<label for="camera">camera:</label>
+<input type="text" name="camera" value="{{film.camera}}">
+
+<br>
+<br>
+
+<label for="asa">ASA:</label>
+<input type="number" name="asa" value="{{film.asa}}">
+
+<br>
+<br>
+
+<label for="color">color</label>
+<input type="radio" id="color" name="blackWhiteOrColor" value="color">
+
+<br>
+<br>
+
+<label for="blackAndWhite">black and white</label>
+<input type="radio" id="blackAndWhite" name="blackWhiteOrColor" value="blackAndWhite">
+
+<br>
+<br>
+
+<label for="filter">filter:</label>
+<input type="text" name="filter" value="{{film.filter}}">
+
+<br>
+<br>
+
+<label for="location">location:</label>
+<input type="text" name="location" value="{{film.location}}">
+
+<br>
+<br>
+
+<label for="startedFilm">First photo of this film taken on:</label>
+<input type="date" name="startedFilm" value="{{film.startedFilm}}">
+
+<br>
+<br>
+
+<label for="endedFilm">Last photo of this film taken on:</label>
+<input type="date" name="endedFilm" value="{{film.endedFilm}}">
+
+<br>
+<br>
+
+<button type="submit">Edit</button>
+
+<br>
+<br>
+
+</form>
+
+{{#if message}}
+  <h3 class="error">{{message}}</h3>
+{{/if}}
 
 <br><br>
+
 <a href="/home"><img class="return" src="/images/arrow.png" alt=""></a>

@@ -83,29 +83,43 @@ router.get("/login", (req, res, next) => {
 })
 
 router.post("/uploadFilm", isLoggedIn, uploader.single("picture"), (req, res, next) => {
-    console.log(req.body)
+    //console.log(req.body)
     const { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm  } = req.body
 
-    // if (title == undefined || brand == undefined || camera == undefined || asa == undefined || format == undefined || blackWhiteOrColor == undefined || filter == undefined) {
-    //   Film.create( { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
-    //     .then(() => {
-    //       res.render("uploadFilm", { message: "Please fill out the required fields" } )
-    //     })
-        //.then((createdFilm) => {
-        // dann irgwie filmfinden und dann muss ichs updaten oder so
-        //})
-    //}
-    //else {
-      Film.create( { imageUrl: req.file.path, title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
-        .then(() => {
-            res.redirect("/home")
-        })
-        .catch(error => next(error))  
-    //}
+    Film.create( { imageUrl: req.file.path, title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm } )
+      .then(() => {
+          res.redirect("/home")
+      })
+      .catch(error => next(error))  
 })
 
-router.get("/editFilm", isLoggedIn, (req, res, next) => {
-    res.render("editFilm")
+router.get("/home/edit/:filmId", isLoggedIn, (req, res, next) => {
+    const { filmId } = req.params
+    Film.findById(filmId)
+      .then(filmToEdit => {
+        res.render("editFilm.hbs", { film: filmToEdit })
+      })
+      .catch(error => next(error))
+})
+
+router.post("/home/edit/:filmId", isLoggedIn, uploader.single("picture"), (req, res, next) => {
+  const { filmId } = req.params
+  const { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm  } = req.body
+
+  console.log('req.body :>> ', req.body);
+
+  let query = { title, brand, camera, asa, blackWhiteOrColor, format, filter, location, startedFilm, endedFilm }
+
+  if (req.file) {
+    query.imageUrl = req.file.path
+  }
+
+  Film.findByIdAndUpdate(filmId, query, {new: true})
+    .then(updatedFilm => {
+      console.log('updatedFilm :>> ', updatedFilm);
+      res.redirect(`/home/${updatedFilm._id}`);
+    } )
+    .catch(error => next(error))
 })
 
 router.get("/logout", (req, res, next)=> {
@@ -118,7 +132,7 @@ router.get("/home/:filmId", isLoggedIn, (req, res, next) => {
   console.log(req.params)
 
   Film.findById(filmId)
-    .then(theFilm => res.render("film-details.hbs", { film: theFilm}))
+    .then(theFilm => res.render("film-details.hbs", { film: theFilm }))
     .catch(error => {
       console.log("Error while retrieving film details:", error)
       next(error)
