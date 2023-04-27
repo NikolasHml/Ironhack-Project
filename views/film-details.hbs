@@ -18,6 +18,9 @@
 <p>endedFilm: {{film.endedFilm}}</p>
 
 <button><a href="/home">Back</a></button>
-<button><a href="/editFilm">Edit photo</a></button>
+<button><a href="/home/edit/{{film._id}}">Edit photo</a></button>
+<form action="/home/delete/{{film._id}}" method="POST">
+    <button>Delete</button>
+</form>
     </div>  
 </div>

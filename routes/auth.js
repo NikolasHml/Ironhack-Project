@@ -122,6 +122,14 @@ router.post("/home/edit/:filmId", isLoggedIn, uploader.single("picture"), (req, 
     .catch(error => next(error))
 })
 
+router.post("/home/delete/:filmId", (req, res, next) => {
+  const { filmId } = req.params
+
+  Film.findByIdAndDelete(filmId)
+    .then(() => res.redirect("/home"))
+    .catch(error => next(error))
+})
+
 router.get("/logout", (req, res, next)=> {
     req.session.destroy()
     res.redirect("/login")
