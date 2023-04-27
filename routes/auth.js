@@ -123,6 +123,4 @@ router.get("/home/:filmId", isLoggedIn, (req, res, next) => {
     })
 })
 
-
-
 module.exports = router
